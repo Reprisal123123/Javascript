@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Basic Selector</title>
+</head>
+<body>
+    <h1 id="title">Javascript Basic Selector</h1>
+
+    <div class="container">
+        <ul id="list1" class="list">
+            <li>li 1</li>
+            <li>li 2</li>
+            <li>li 3</li>
+            <li>li 4</li>
+            <li>li 5</li>
+        </ul>
+    </div>
+    <div class="container">
+        <ul id="list2" class="list">
+            <li>li 1</li>
+            <li>li 2</li>
+            <li>li 3</li>
+            <li>li 4</li>
+            <li>li 5</li>
+        </ul>
+    </div>
+    <div class="container">
+        <ul id="list3" class="list">
+            <li class="red" name="red">li 1</li>
+            <li>li 2</li>
+            <li>li 3</li>
+            <li>li 4</li>
+            <li>li 5</li>
+            <li>li 6</li>
+        </ul>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet quidem eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet quidem eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet quidem eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+    </p>
+    <script>
+        var firstTitle = document.getElementById('title'); // id로 요소 선택
+        var myList = document.getElementsByClassName('list'); // class명으로 요소들 선택
+        var paragraphs = document.getElementsByTagName('p'); // 태그명으로 요소 선택
+        var myList2 = document.querySelector('.list .red'); // css 선택자로 요소 선택
+        var myList3 = document.querySelectorAll('.list');
+
+        console.log(firstTitle);
+        console.log(myList);
+        console.log(paragraphs);
+        console.log(myList2);
+        console.log(myList3);
+
+        firstTitle.style.color = 'red';
+        myList[0].style.display = 'none';
+        // paragraphs.style.color = 'red';
+        myList3.item(1).style.border = "1px solid blue";
+
+        // 모든 p 태그를 빨간색으로 변경
+        for(var i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].style.color = 'blue';
+        }
+
+        // list 클래스의 테두리를 생성
+        for(var j = 0; j < myList3.length; j++) {
+            // querySelectorAll은 배열과 비슷한 객체인 nodeList를 반환함
+            // 반환객체가 nodeList이기 때문에 for문 또는 forEach문을 사용함
+            var item = myList3.item(j);
+            item.style.border = "1px solid black";
+        }
+
+        
+    </script>
+</body>
+</html>
