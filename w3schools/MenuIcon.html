@@ -30,7 +30,7 @@
     </style>
 </head>
 <body>
-    <div class="container" onclick="toggle()">
+    <div class="container">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
@@ -52,6 +52,8 @@
         function toggle() {
             con.classList.toggle('change');
         }
+
+        con.addEventListener('click', toggle);
 
     </script>
 </body>
